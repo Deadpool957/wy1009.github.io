@@ -104,7 +104,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/give-up-redux-comment-list.jpeg">
 <meta property="og:image" content="http://yoursite.com/images/give-up-redux-containers.png">
-<meta property="og:updated_time" content="2018-11-05T11:53:10.050Z">
+<meta property="og:updated_time" content="2018-11-05T12:49:22.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我的项目为什么使用又剥离了Redux">
 <meta name="twitter:description" content="关于我的项目这么简单我为什么又折腾了。 关于我的需求为什么做不完我怎么在加班。 决定引入 Redux 的原因当初，决定将 Redux 引入项目的原因其实非常简单。项目的嵌套层级太深了。以评论列表的一个分支为例，嵌套层级为 CommentZone（用于引用评论列表组件，即下文的“环境”）&amp;gt; CommentList（评论列表组件）&amp;gt; Comment（单条评论组件）&amp;gt; ReplyLis">
@@ -397,10 +397,10 @@
 <p>画圈的部分为与 Redux 有所交互的组件，旁边标明了操作的内容。其实数据部分，我原本就是从 CommentZone 开始层层向下传递的。所以可以看到，图中所有与 Redux 的交互都是对 store 中数据的操作。这其实是因为，我写代码的过程中就在是在有意识减少与 Redux 的耦合的，但是“减少”不等于没有，这样做其实并没有什么意义。</p>
 <p>那么，我为什么想要让这部分脱离 Redux 呢？</p>
 <h3 id="调用-CommentList-组件的环境，多环境的逻辑耦合在一起"><a href="#调用-CommentList-组件的环境，多环境的逻辑耦合在一起" class="headerlink" title="调用 CommentList 组件的环境，多环境的逻辑耦合在一起"></a>调用 CommentList 组件的环境，多环境的逻辑耦合在一起</h3><p>我的 CommentList，虽然没有从 store 中直接取任何数据，但还是需要对 store 中的数据进行操作，比如发表，点赞，删除评论等，这些行为都直接在 action 。你会发现，如果在另一个地方（让我们把它称为“环境”）调用，接口都会不同，那么，你就只能在 action 中做 if/else 配置。优雅与否另说，这会导致多个引用组件的环境的逻辑都耦合在一起，耦合在一个 action 中，这显然是不干净的，也会让一个方法看起来十分复杂。</p>
-<h3 id="由于子组件也是“容器组件”，导致无法完全剥离容器组件"><a href="#由于子组件也是“容器组件”，导致无法完全剥离容器组件" class="headerlink" title="由于子组件也是“容器组件”，导致无法完全剥离容器组件"></a>由于子组件也是“容器组件”，导致无法完全剥离容器组件</h3><p>你可能会说，看看 Redux 的文档，其中写得很清楚，使用 Redux 的组件会被专门包裹为一个“容器组件”，也就是原组件的一个高阶组件。而不是直接在普通组件中从 store 中取数据 / 对 store 中的数据进行操作。</p>
+<h3 id="由于子组件也是“容器组件”，导致无法完全剥离容器组件"><a href="#由于子组件也是“容器组件”，导致无法完全剥离容器组件" class="headerlink" title="由于子组件也是“容器组件”，导致无法完全剥离容器组件"></a>由于子组件也是“容器组件”，导致无法完全剥离容器组件</h3><p>你可能会说，本来就不应该在 action 中写 if/else 呀，应该使用不同的 action。看看 Redux 的文档，其中写得很清楚，使用 Redux 的组件会被专门包裹为一个“容器组件”，也就是原组件的一个高阶组件。我们会使用高阶组件将不同的 action 通过 props 传入原组件，而不是直接在普通组件中从 store 中取数据 / 对 store 中的数据进行操作。</p>
 <p><img src="/images/give-up-redux-containers.png" alt="Redux 官方文档 Todo List 示例，容器组件部分代码" title="Redux 官方文档 Todo List 示例，容器组件部分代码"></p>
 <p>我不知道大家有没有考虑过文档中要求这样做的意义，我个人认为，这应该是为了保持原组件的纯洁。使用高阶组件连接 store，意味着原组件本身和 Redux 没有任何关系，只是单纯地从 props 中取数据，调用 props 中的方法而已。</p>
-<p>也就是说，如果想要让组件脱离 Redux / 使用不同的 action，只要不使用高阶组件 / 生成不同的高阶组件就可以了。</p>
+<p>也就是说，如果想要让组件脱离 Redux，只要不使用高阶组件就可以了。而如果要使用不同的 action，生成不同的高阶组件就可以了。这让原组件没有和任何东西耦合，可以和任何东西合作，十分纯洁。</p>
 <p>但是，如果该组件的子组件也是一个高阶组件，上面那句话就变得无法做到了。这意味着，原组件引用了一个高阶组件，原组件本身就是和 Redux 相关的，本身就不纯洁。</p>
 <h3 id="由于数据的强耦合，单条评论也需要被作为评论列表处理"><a href="#由于数据的强耦合，单条评论也需要被作为评论列表处理" class="headerlink" title="由于数据的强耦合，单条评论也需要被作为评论列表处理"></a>由于数据的强耦合，单条评论也需要被作为评论列表处理</h3><p>由于子节点与 Redux 层层耦合，你会发现，哪怕只想展示一条评论，那么该条评论也必须被作为一个评论列表来处理。毕竟，子节点中的发表，删除，点赞等种种逻辑，其 action 所 dispatch 的 reducer，所操作的都是 store 中的一个评论列表。这让使用也变得比较局限。</p>
 <h3 id="无法在同一组件使用多个评论列表"><a href="#无法在同一组件使用多个评论列表" class="headerlink" title="无法在同一组件使用多个评论列表"></a>无法在同一组件使用多个评论列表</h3><p>这个问题，由于业务逻辑本身也不是“两个列表”，所以我自然而然地将 store 中的一个列表分成两部分来显示。但是回头一想，才发现，当前评论列表存放在 store 中，本身就阻止了在同一组件中显示两个评论列表。因为 store 中只有一份数据。</p>
