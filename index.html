@@ -283,6 +283,337 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/关于我的项目为什么使用又剥离了Redux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="泉先">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不会化妆的写手<br>不是好程序员">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/05/关于我的项目为什么使用又剥离了Redux/" itemprop="url">关于我的项目为什么使用又剥离了Redux</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-05T18:33:18+08:00">
+                2018-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/框架-库-工具/" itemprop="url" rel="index">
+                    <span itemprop="name">框架/库/工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/框架-库-工具/React-js/" itemprop="url" rel="index">
+                    <span itemprop="name">React.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>关于我的项目这么简单我为什么又折腾了。</p>
+<p>关于我的需求为什么做不完我怎么在加班。</p>
+<h2 id="决定引入-Redux-的原因"><a href="#决定引入-Redux-的原因" class="headerlink" title="决定引入 Redux 的原因"></a>决定引入 Redux 的原因</h2><p>当初，决定将 Redux 引入项目的原因其实非常简单。项目的嵌套层级太深了。以评论列表的一个分支为例，嵌套层级为 CommentZone（用于引用评论列表组件，即下文的“环境”）&gt; CommentList（评论列表组件）&gt; Comment（单条评论组件）&gt; ReplyList（单条评论中的回复列表）&gt; Reply（单条回复）。在最末端的 Reply 组件中，我需要删除单条回复，而删除单条回复，实际上本质是操作最顶层的评论列表。这意味着，我用于删除评论列表的方法需要从顶层层层向下传递，传递四层。</p>
+<p>这让我义无反顾地选择了 Redux。</p>
+<p>然而，随着业务的不断更新，愚蠢而稚嫩的我开始意识到了自己的错误。那就是，一个打算要复用的东西，本身就是不应该和 Redux 有所牵连的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/05/关于我的项目为什么使用又剥离了Redux/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/16/immutability-in-react-and-redux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="泉先">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="不会化妆的写手<br>不是好程序员">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/16/immutability-in-react-and-redux/" itemprop="url">React 和 Redux 中的不可变性：全面指引</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-16T16:41:29+08:00">
+                2018-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/框架-库-工具/" itemprop="url" rel="index">
+                    <span itemprop="name">框架/库/工具</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/框架-库-工具/React-js/" itemprop="url" rel="index">
+                    <span itemprop="name">React.js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>不可变性（immutability）可以是个令人困惑的话题，一般来说，它会在 React、Redux 和 JavaScript 中到处出现。</p>
+<p>你可能碰到过更改了props，但 React 组件不重新渲染的 bug。有人说：“你应该做不可变性的状态更新。”可能你或者你的同事经常写使状态可变的 Redux reducers，且你不得不不断纠正他们（reducers，或者你的同事😄）。</p>
+<p>纠正这个很棘手。它真的很微妙，特别是如果你不确定该追求什么。况且说真的，如果你不确定为什么这很重要，那就很难去在意它。</p>
+<p>这份导航会解释“不可变性”是什么，以及如果在你自己的应用中写不可变性的代码。</p>
+<h2 id="不可变性是什么"><a href="#不可变性是什么" class="headerlink" title="不可变性是什么"></a>不可变性是什么</h2><p>首先，“不可变”是“可变”的反义词——“可变”意味着可以变化，可能会出问题。</p>
+<p>所以某个东西是不可变的，就是说，这个东西不能够被改变。</p>
+<p>极端的讲，这意味着比起传统地直接改变值，你应该始终创建新的值去取代旧的值。JavaScript 没有这么极端，但是一些语言完全不允许“可变”（Elixir、Erlang、ML 等等）。</p>
+<p>尽管 JavaScript 不是纯粹的函数式语言，但它有时候可以假装是。在 JS 中，某些数组操作是不可变的（就是返回一个新数值，而不是修改原本的）。字符串操作总是不可变的（变化会创建一个新字符串）。并且，你也可以自己写不可变的函数。你只需要意识到一些规则。</p>
+<h3 id="突变（mutation）的代码示例"><a href="#突变（mutation）的代码示例" class="headerlink" title="突变（mutation）的代码示例"></a>突变（mutation）的代码示例</h3><p>我们可以通过一个例子来看可变性是怎样的。比如以下这个 <code>person</code> 对象：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">  firstName: &apos;Bob&apos;,</span><br><span class="line">  lastName: &apos;Loblaw&apos;,</span><br><span class="line">  address: &#123;</span><br><span class="line">    street: &apos;123 fake St&apos;,</span><br><span class="line">    city: &apos;Emberton&apos;,</span><br><span class="line">    state: &apos;NJ&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来，我们写一个函数，给这个人赋予超能力：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function giveAwesomePowers(person) &#123;</span><br><span class="line">  person.specialPower = &apos;invisibility&apos;</span><br><span class="line">  return person</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>好了，这样，每个人都得到了同样的超能力。不管怎么样，隐身是很棒的！</p>
+<p>让我们给 Loblaw 先生赋予超能力：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 刚开始，Bob 没有超能力 :(</span><br><span class="line">console.log(person)</span><br><span class="line"></span><br><span class="line">// 接着，我们调用函数</span><br><span class="line">let samePerson = giveAwesomePowers(person)</span><br><span class="line"></span><br><span class="line">// 现在，Bob 有超能力了！</span><br><span class="line">console.log(Bob)</span><br><span class="line">console.log(samePerson)</span><br><span class="line"></span><br><span class="line">// 尽管如此，在其他方面，他仍旧是同一个人</span><br><span class="line">console.log(&apos;Are they the same?&apos;, person === samePerson) // true</span><br></pre></td></tr></table></figure>
+<p><code>giveAwesomePowers</code> 函数改变了传入其中的 <code>person</code>。运行这段代码，你能看到，我们第一次打印 <code>person</code>，Bob 没有 <code>specialPower</code> 属性。然而接下来，第二次，他突然有了隐身的 <code>specialPower</code>。</p>
+<p>也就是说……</p>
+<p>最近太忙，TBC……</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/20/rem布局在webview中页面错乱/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1577,328 +1908,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/Underscore-js实现链式调用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="泉先">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不会化妆的写手<br>不是好程序员">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/Underscore-js实现链式调用/" itemprop="url">Underscore.js实现链式调用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T20:11:13+08:00">
-                2017-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/框架-库-工具/" itemprop="url" rel="index">
-                    <span itemprop="name">框架/库/工具</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/框架-库-工具/Underscore-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Underscore.js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="underscore基本结构"><a href="#underscore基本结构" class="headerlink" title="underscore基本结构"></a>underscore基本结构</h2><p>在全局变量上挂载一个对象“_”，将方法全部添加在这个对象上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var root = typeof self == &apos;object&apos; &amp;&amp; self.self === self &amp;&amp; self ||</span><br><span class="line">  typeof global == &apos;object&apos; &amp;&amp; global.global === global &amp;&amp; global ||</span><br><span class="line">  this ||</span><br><span class="line">  &#123;&#125;</span><br><span class="line"></span><br><span class="line">var _ = &#123;&#125;</span><br><span class="line">root._ = _</span><br></pre></td></tr></table></figure>
-<h2 id="面向对象风格"><a href="#面向对象风格" class="headerlink" title="面向对象风格"></a>面向对象风格</h2><p>调用underscore方法的两种方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">_.each(obj, function () &#123;&#125;)</span><br><span class="line"></span><br><span class="line">// 面向对象风格</span><br><span class="line">_(obj).each(function () &#123;&#125;)</span><br></pre></td></tr></table></figure>
-<p>为实现面向对象风格，将<code>_</code>写为构造函数。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/14/Underscore-js实现链式调用/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/23/对象类型判断/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="泉先">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="不会化妆的写手<br>不是好程序员">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/23/对象类型判断/" itemprop="url">对象类型判断</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-23T15:41:11+08:00">
-                2017-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="类型判断的方法-Object-prototype-toString是最优解"><a href="#类型判断的方法-Object-prototype-toString是最优解" class="headerlink" title="类型判断的方法 - Object.prototype.toString是最优解"></a>类型判断的方法 - Object.prototype.toString是最优解</h2><h3 id="Array-isArray"><a href="#Array-isArray" class="headerlink" title="Array.isArray()"></a>Array.isArray()</h3><p>ES5，低版本浏览器不支持。只有Array有这个方法。</p>
-<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><p>无法判断出array与null，两个返回结果都是object。</p>
-<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>问题1：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num = 1</span><br><span class="line">num instanceof Number // false</span><br><span class="line">var num = new Number()</span><br><span class="line">num instanceof Number // true</span><br></pre></td></tr></table></figure>
-<p>如果是直接创建的原始类型，不instanceof其构造函数。当然，array、object等引用类型不受影响。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/23/对象类型判断/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1949,7 +1958,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1960,7 +1969,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -1971,7 +1980,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
