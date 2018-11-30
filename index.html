@@ -386,8 +386,8 @@
 
       
         
-          <p>React 16.4 <a href="https://reactjs.org/blog/2018/05/23/react-v-16-4.html#bugfix-for-getderivedstatefromprops" target="_blank" rel="noopener">为 <code>getDerivedStateFromProps</code> 修复了一个 bug</a>，这个 bug 会导致一些在 React 组件中存在的 bug 不断重现。如果本次更新暴露了你的应用正在使用反模式（不推荐的做法）且在本次更新后可能出现问题，我们感到很抱歉。在这篇博文中，我们会解释一些使用 derived state 时常见的反模式和我们更喜欢的替代做法。</p>
-<p>在很长一段时间里，如果想在 props 改变时更新 state，且不造成多余的渲染，我们只能依靠 <code>componentWillReceiveProps</code> 生命周期。在 16.3 版本，<a href="https://reactjs.org/blog/2018/03/29/react-v-16-3.html#component-lifecycle-changes" target="_blank" rel="noopener">我们介绍了一种可以替代 <code>componentWillReceiveProps</code> 的生命周期—— <code>getDerivedStateFromProps</code></a> ——来更安全地解决同样的问题。与此同时，我们发现大家对使用这两种生命周期有很多错误的观念，也发现了一些会造成微妙而令人困扰的 bug 的反模式。16.4 版本中对 <code>getDerivedStateFromProps</code> 的 bugfix 使 derived state 更加可预料，因而误用它所产生的结果也更加容易被注意到。</p>
+          <p>React 16.4 <a href="https://reactjs.org/blog/2018/05/23/react-v-16-4.html#bugfix-for-getderivedstatefromprops" target="_blank" rel="noopener">为 <code>getDerivedStateFromProps</code> 修复了一个 bug</a>，这个 bug 会导致一些在 React 组件中存在的 bug 不断重现。如果本次更新暴露了你的应用正在使用反模式（不推荐的做法）且在本次更新后可能出现问题，我们对此感到抱歉。在这篇博文中，我们会解释一些使用 derived state 时常见的反模式和我们更推荐的替代做法。</p>
+<p>在很长一段时间里，如果想在 props 改变时更新 state，且不造成多余的渲染，我们只能依靠生命周期 <code>componentWillReceiveProps</code>。在 16.3 版本，<a href="https://reactjs.org/blog/2018/03/29/react-v-16-3.html#component-lifecycle-changes" target="_blank" rel="noopener">我们介绍了一种可以替代 <code>componentWillReceiveProps</code> 的生命周期—— <code>getDerivedStateFromProps</code></a> ——来更安全地解决同样的问题。与此同时，我们发现大家在使用这两种生命周期时存在很多错误的观念，也发现了一些会造成微妙而令人困扰的 bug 的反模式。16.4 版本中对 <code>getDerivedStateFromProps</code> 的 bugfix 使 derived state 更加可预料，因而误用它所产生的结果也更加容易被注意到。</p>
 <blockquote>
 <p><strong> 注意 </strong><br>本文描述的所有反模式都同时适用于旧的 <code>componentWillReceiveProps</code> 和新的 <code>getDerivedStateFromProps</code>。</p>
 </blockquote>
